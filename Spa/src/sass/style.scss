@@ -1,0 +1,276 @@
+@use "variables" as *;
+
+// Reset
+@use "normalize" as *;
+@use "base" as *;
+@use "mixins" as *;
+@use "sass:map";
+
+/*
+h1 {
+    color: map.get(map.get($colors, "primary"), "green");
+    @include breakpoint(desktop){
+        color: red;
+    }
+}
+
+p{
+    color: map.get(map.get($colors, "secondary"), "green");
+
+}
+*/
+
+article{
+
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    background-color: map.get(map.get($colors, "neutral"), "lightgray");;
+    section.text{
+        width: 67%;
+        height: 100%;
+        div.main{
+            position: relative;
+            top: 10%;
+            left: 18%;
+            width: 52%;
+            h1{
+                font-size: 2.6rem;
+                color: map.get(map.get($colors, "secondary"), "darkblue");
+                line-height: 1;
+            }
+            p{
+                color: map.get(map.get($colors, "neutral"), "gray");
+                padding-top: 50px;
+            }
+            div.selection{
+                padding-top: 50px;
+                font-size: .8em;
+                display: flex;
+                align-items: center;
+                button:nth-child(1){
+                    background-color: map.get(map.get($colors, "secondary"), "darkblue");
+                    color: map.get(map.get($colors, "neutral"), "white");
+                    border-radius: 50px;
+                    width:120px;
+                    height: 40px;
+                }
+                button:nth-child(2){
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-left: 40px;
+                    color: map.get(map.get($colors, "secondary"), "darkblue");
+                    width:120px;
+                    height: 40px;
+                    gap: 8px;
+                    .material-symbols-outlined {
+                        background-color: map.get(map.get($colors, "neutral"), "white");
+                        border-radius: 50px;
+                        padding: 2px;
+                        font-variation-settings: 
+                        'FILL' 1,
+                        'wght' 400,
+                        'GRAD' 0,
+                        'opsz' 24;                        
+                    }
+
+                }
+            }
+            div.info{
+                padding-top: 50px;
+                display: flex;
+                align-items: center;
+                text-align: center;
+                justify-content: space-around;
+                width: 80%;
+                div{
+                    width: 126px;
+                }
+                
+                p:nth-child(3){
+                    padding: 0; 
+                }
+            }
+        }
+            
+    }
+
+    section.spa{
+        width: 33%;
+        height: 70%;
+        background-color: map.get(map.get($colors, "secondary"), "lightblue");
+        div.img{
+            position: relative;
+            top: 1%;
+            right: 4%;
+            img{
+                opacity: .1;
+                max-width: 100%;
+                max-height: 280px;
+            }
+        }
+    }
+
+    div.woman{
+        position: absolute;
+        left: 28%;
+        top: -3%;
+        img{
+            max-width: 95%;
+            max-height: 740px;
+        }
+    }
+
+    section.aside{
+        width: 400px;
+        height: 350px;
+        position: absolute;
+        left: 67%;
+        top: 38%;
+        display: flex;
+        flex-direction: column;
+        opacity: .7;
+        justify-content: space-between;
+        div.sophia{
+            font-size: .9rem;
+            border-radius: 10px;
+            background-color: map.get(map.get($colors, "neutral"), "white");
+            width: 69%;
+            padding: 10px 15px;
+            align-self: flex-end;
+            text-align:left;
+            img{
+                max-height: 12px;
+            }
+            p:nth-child(2){
+                font-size: 0.85em;
+            }
+            p:nth-child(3){
+                color: map.get(map.get($colors, "secondary"), "darkblue");
+                font-weight: 700;
+            }
+        }
+
+        div.tamara{
+            font-size: .9rem;
+            border-radius: 10px;
+            background-color: map.get(map.get($colors, "neutral"), "white");
+            width: 68%;
+            padding: 10px 15px;
+            margin-left: 25px;
+            text-align:left;
+            img{
+                max-height: 12px;
+            }
+            p:nth-child(2){
+                font-size: 0.85em;
+            }
+            p:nth-child(3){
+                color: map.get(map.get($colors, "secondary"), "darkblue");
+                font-weight: 700;
+            }
+        }
+    }
+}
+
+div.menu1 {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; // Distribuye el logo y los enlaces correctamente
+    padding: 0 18%; // Asegura que no estén pegados a los bordes
+    z-index: 10; // Asegura que los enlaces estén por encima de otros elementos
+
+    a {
+        text-decoration: none;
+        color: map.get(map.get($colors, "secondary"), "darkblue"); 
+        font-size: 1.4em;
+
+        span.first-half {
+            font-weight: 800;
+        }
+        span.second-half {
+            color: map.get(map.get($colors, "secondary"), "lightblue");
+            font-weight: 800;
+        }
+    }
+
+    nav.left {
+        ul.left {
+            display: flex;
+            gap: 30px; // Espacio entre elementos
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            li {
+                a {
+                    color: map.get(map.get($colors, "secondary"), "darkblue");
+                    font-size: .9em;
+                    transition: color 0.3s ease-in-out;
+                    &:hover {
+                        color: blue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+div.menu2{
+    position: relative;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; // Distribuye el logo y los enlaces correctamente
+    padding: 0 15%; // Asegura que no estén pegados a los bordes
+    z-index: 10; // Asegura que los enlaces estén por encima de otros elementos
+
+    a {
+        text-decoration: none;
+        color: map.get(map.get($colors, "secondary"), "darkblue"); 
+        font-size: 1.4em;
+    }
+
+    nav.right{
+        display: flex;
+        gap: 40px;
+        align-items: center;
+
+        ul.center, ul.right {
+            display: flex;
+            align-items: center; // 🔹 Asegura que los íconos y enlaces estén alineados
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 20px;
+        }
+
+        ul.right {
+            a{
+                text-decoration: underline;
+                font-size: .9em;
+                transition: color 0.3s ease-in-out;
+                &:hover {
+                    color: blue;
+                }
+            }
+            button{
+                background-color: map.get(map.get($colors, "secondary"), "darkblue");
+                color: map.get(map.get($colors, "neutral"), "white");
+                border-radius: 50px;
+                width:120px;
+                height: 40px;
+            }
+        }
+    }
+}
+
+
+
+
